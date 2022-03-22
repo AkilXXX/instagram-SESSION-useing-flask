@@ -1,0 +1,61 @@
+
+<!doctype html> 
+<html> 
+<head><title>
+    Results Page 
+  </title></head>
+   <body>
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/d.css') }}">
+         <div class="form">
+            <div class="form-toggle"></div>
+              <div class="form-panel one">
+               <div class="form-header">
+                  <h1 >The Results </h1>
+               </div>
+               {% if akilres ==1 %}
+               <div class="form-content">
+                  <form action = "/home" method = "post" > 
+                     <div class="form-group">
+                        <label dir="rtl" for="username">USER</label>
+                        <input type="text" id="username" name="username" value="{{ user }}"/>
+                     </div>
+                     <div class="form-group">
+                        <label dir="rtl" for="username">ID</label>
+                        <input type="text" id="ss" name="ss" value="{{ pk }}"/>
+                     </div>
+                     <div class="form-group">
+                        <label dir="rtl" for="username">Season </label>
+                        <input type="text" id="ss" name="ss" value="{{ sis }}"/>
+                     </div>                
+                     <div class="form-group">
+                      <button type="submit" id="submit" >Again </button>
+                    </div>
+                  </form>
+               </div>
+                   
+               {% else %}
+               <div class="form-content">
+                 <form action = "/home" method = "post" > 
+                   <div class="form-group">
+                     <label dir="rtl" for="username">ERROR</label>
+                     <input type="text" id="username" name="username" value="{{ error }}"/>
+                   </div>       
+                  <div class="form-group">
+                   <button type="submit" id="submit" >Try Again </button>
+                 </div>
+                 </form>
+               </div>
+               
+               {% endif %}
+     
+               </div>
+               <div class="form-panel two">
+               <div class="form-header">
+                  <h1>hi</h1>
+               </div>
+               <div class="form-content"><form></form></div>
+        </div>
+      </div>
+   </body>
+</html> 
+  
